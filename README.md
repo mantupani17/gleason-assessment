@@ -6,8 +6,8 @@
 
 # Used Mongodb for storing the data. 
 
- 1. clone the repo
- 2. run npm install in both folder
- 3. create an .env file with PORT, APP_SECRET, TOKEN_EXPIRY, BASE_URL, DB_URL inside the backend folder
+ 1. clone the repo, There are two branches master and frontend 
+ 2. run npm install in both branch
+ 3. create an .env file with PORT, APP_SECRET, TOKEN_EXPIRY, BASE_URL, DB_URL inside the master/backend folder
  4. start the API server using #nodemon
  5. start the dashboard as it is developed using angular run by #ng serve 
