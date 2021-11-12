@@ -1,0 +1,87 @@
+
+<div class="gl-tab">
+    <div (click)="toggleTab('create_user')" class="save-tab">Create User</div>
+    <div (click)="toggleTab('view_user')" class="view-tab">View User</div>
+</div>
+<div *ngIf="isSaveTabSelected">
+    <form #registerform="ngForm" (ngSubmit)="OnSubmit(registerform)">
+        <div class="form-row">
+            <div class="form-group col-lg-12">
+                <label for="inputState">Customer</label>
+                <select  id="inputState" class="form-control" [(ngModel)]="customer" (ngModelChange)="selectChange($event)" name="customer">
+                    <option *ngFor="let opt of customers" [value]="opt" [selected]="opt.selected == true" >{{opt}}</option>
+                </select>
+            </div>
+            <div class="form-group col-md-12">
+                <label for="username">User Name</label>
+                <input class="form-control" #username="ngModel" id="username" [(ngModel)]="user.username" name="username" placeholder="User name" type="text">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="email">Email</label>
+                <input class="form-control" #email="ngModel" id="email" [(ngModel)]="user.email" name="email" placeholder="Email" type="email">
+            </div>
+            <div class="form-group col-md-12">
+                <label for="first_name">First Name</label>
+                <input class="form-control" #first_name="ngModel" id="first_name" [(ngModel)]="user.first_name" name="first_name" placeholder="First name" type="text">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="last_name">Last name</label>
+                <input class="form-control" #last_name="ngModel" id="last_name" [(ngModel)]="user.last_name" name="last_name" placeholder="Last Name" type="text">
+            </div>
+            <div class="form-group col-md-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="is_trial_user" #is_trial_user="ngModel" id="is_trial_user" [(ngModel)]="user.is_trial_user" name="is_trial_user"> 
+                    <label class="form-check-label" for="is_trial_user">
+                        Trial User
+                    </label>
+                </div>
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="roles-tab">Roles</label>
+                <div id="roles-tab"></div>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="form-check" *ngFor="let role of roles; let i=index">
+                    <input class="form-check-input" type="checkbox" value="" id="roles-{{i}}" (change)="selectRoles(i)" id="roles-{{i}}"  name="roles"> 
+                    <label class="form-check-label" for="roles-{{i}}">
+                        {{role}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button (click)="resetForm()" class="btn btn-primary">Reset</button>
+    </form>
+</div>
+<div *ngIf="!isSaveTabSelected">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Customer</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userList; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.customer}}</td>
+            <td><button class="gl-delete-btn" (click)="deleteUsere(user._id)">delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

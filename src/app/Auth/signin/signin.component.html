@@ -1,0 +1,20 @@
+<div class="login-container">
+    <h4 class="login-title">GEMS Cloud Web Application</h4>
+    <form #loginform="ngForm"  (ngSubmit)="OnSubmit(loginform)">
+        <div>
+            <div>
+                <input #email="ngModel" [(ngModel)]="user.email" name="email" placeholder="User name" type="email">
+            </div>
+        </div>
+        <div>
+            <div>
+                <input #password="ngModel" [(ngModel)]="user.password" name="password" placeholder="Password" type="password">
+            </div>
+        </div>
+        <div >
+            <div>
+                <button [disabled]="!loginform.valid" class="login-btn" type="submit"> Sign In </button>
+            </div>
+        </div>  
+    </form>
+</div>

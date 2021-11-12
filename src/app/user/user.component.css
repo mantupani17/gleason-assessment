@@ -1,0 +1,25 @@
+.gl-tab {
+    display: flex;
+    width: 99%;
+    border-bottom: 1px solid;
+    padding: 8px 0px 11px 2px;
+}
+
+.save-tab{
+    width: 50%;
+    float: left;
+    text-align: center;
+    border-right:1px solid ;
+    cursor: pointer;
+}
+
+.view-tab{
+    width: 50%;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+}
+
+.gl-delete-btn {
+    
+}

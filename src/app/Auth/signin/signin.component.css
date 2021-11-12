@@ -1,0 +1,24 @@
+.login-container{
+    margin-left: 36%;
+    width: 30%;
+    margin-top: 10%;
+}
+
+input {
+    width: 100%;
+    padding: 3px 0px 9px 11px;
+    margin-bottom: 8px;
+}
+
+.login-btn{
+    background: #6262d1;
+    border: none;
+    width: 100%;
+    padding: 10px 5px 10px 0px;
+    color: white;
+    font-size: 10px;
+}
+
+.login-title{
+    padding: 3px 2px 9px 22px;
+}

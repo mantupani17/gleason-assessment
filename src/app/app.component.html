@@ -1,0 +1,4 @@
+<app-header *ngIf="is_login_route"></app-header>
+<div [ngClass]="getClass(is_login_route)"> 
+  <router-outlet></router-outlet>
+</div>

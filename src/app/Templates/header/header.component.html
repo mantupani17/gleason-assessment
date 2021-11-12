@@ -1,0 +1,29 @@
+<main style="width: 100%;display: flex;border-bottom: 1px solid #d2d8dd;height: 68px;" *ngIf="is_login_route">
+    <div class="flex-shrink-0 p-3 bg-white" style="width:20%;border-right: 1px solid #d2d8dd;height: 600px;" *ngIf="is_side_bar_enabled">
+        <p href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+          <span class="fw-semibold logo">Gleason</span>
+        </p>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <!-- <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+              Home
+            </button> -->
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li class="gl-menu"><a routerLink="/dashboard" class="link-dark rounded">Dashboard</a></li>
+                <li class="gl-menu"><a routerLink="/user-management" class="link-dark rounded">User Management</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+    </div>
+    <div style="width: 80%;float: right; cursor: pointer;" >
+        <div class="bar-container" (click)="toggleSideBar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div style="float: right;" class="gl-logout-btn" (click)="logout()">logout</div>
+    </div>
+</main>

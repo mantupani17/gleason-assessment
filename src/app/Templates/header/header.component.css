@@ -1,0 +1,27 @@
+.logo{
+    font-size: 24px;
+    font-style: initial;
+    color: blue;
+}
+.bar{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+.bar-container {
+    margin-left: 10px;
+    margin-top: 14px;
+    width: 50px;
+    float: left;
+}
+.rounded {
+    text-decoration: none;
+}
+.gl-menu{
+    padding: 0px 0px 10px 2px;
+}
+.gl-logout-btn {
+    margin-top: 19px;
+    margin-right: 19px;
+}
