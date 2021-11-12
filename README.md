@@ -2,7 +2,7 @@
 
 # backend folder will serve the API and frontend will serve the dashboard
 
-# partially completed the API and UI part except update operation for the users
+# partially completed the task, API and UI part except update operation for the users
 
 # Used Mongodb for storing the data. 
 
