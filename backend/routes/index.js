@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const UserController = require('./../constrollers/UserController');
 const { check } = require('express-validator');
+const verifyToken = require('../auth-middleware')
 
 
 router.get('/', UserController.getUserDetails);
-router.post('/', 
+router.post('/', verifyToken,
             check('email').isEmail().withMessage('The email is not valid.'),
             check('customer').isString().withMessage("The value should be string").notEmpty().withMessage('Should not be empty'),
             check('first_name').isString().withMessage("The value should be string").notEmpty().withMessage('Should not be empty'),

@@ -88,7 +88,6 @@ class UserController {
                 })
             }
 
-            console.log(query)
 
             if ( body && body.first_name) {
                 updateData['first_name'] = body.first_name;
@@ -172,6 +171,7 @@ class UserController {
     static async login(req, res, next) {
         try {
             let query = req.body;
+            
             if (query && !query.email) {
                 return res.status(400).send({
                     message: "Please enter username",
@@ -200,7 +200,7 @@ class UserController {
 
             userDetails = userDetails[0];
             let payload = {
-                username: userDetails,
+                username: userDetails.username,
                 name: userDetails.first_name + " " + userDetails.last_name,
                 customer: userDetails.customer,
                 role: userDetails.roles

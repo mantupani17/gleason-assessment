@@ -36,8 +36,6 @@ User.getUserDetails = async function(query, select, limit, skip, sort) {
             .limit(limit)
             .skip(skip)
             .sort(sort); 
-        console.log(query)
-        // console.log(results)
         return results
     } catch (error) {
         console.log(error)
