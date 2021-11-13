@@ -15,7 +15,7 @@ export class AppComponent {
     }
   }
 
-  getClass(is_login:String) {
+  getClass(is_login:Boolean) {
     if (is_login) {
       return 'gl-content';
     } 
