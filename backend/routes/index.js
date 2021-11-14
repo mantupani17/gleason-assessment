@@ -14,9 +14,9 @@ router.post('/', verifyToken,
             check('last_name').isString().withMessage("The value should be string").notEmpty().withMessage('Should not be empty'),
             check('is_trial_user').isBoolean().withMessage("The value should be True/False").notEmpty().withMessage('Should not be empty'),
         UserController.createUserDetails);
-router.put('/', UserController.updateUserDetails);
-router.delete('/', UserController.updateUserDetails);
-router.get('/count', UserController.getUserCount);
+router.put('/', verifyToken, UserController.updateUserDetails);
+router.delete('/', verifyToken, UserController.updateUserDetails);
+router.get('/count', verifyToken,  UserController.getUserCount);
 
 // auth routes
 router.post('/auth/login', UserController.login);
